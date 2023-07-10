@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const Joi = require("joi");
+Joi.objectId = require("joi-objectid")(Joi);
 const mongoose = require("mongoose");
 
 mongoose
@@ -24,3 +26,5 @@ app.use("/api/movies", movies);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
+
+exports.Joi = Joi;
