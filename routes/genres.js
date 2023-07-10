@@ -1,9 +1,10 @@
 const express = require("express");
+const auth = require("../middlewares/auth");
 const router = express.Router();
 
 const { Genre, validate } = require("../models/genres");
 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   const genres = await Genre.find().sort("name");
   res.send(genres);
 });
