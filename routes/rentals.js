@@ -4,7 +4,7 @@ const router = express.Router();
 const Fawn = require("fawn");
 
 const { Rental, validate } = require("../models/rentals");
-const { Customer } = require("../models/customer");
+const { Customer } = require("../models/customers");
 const { Movie } = require("../models/movies");
 
 Fawn.init(mongoose);
