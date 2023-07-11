@@ -17,6 +17,7 @@ module.exports = createLogger({
   format: combine(timestamp(), format.json()),
   transports: [
     new transports.File({ filename: "combined.log" }),
+    new transports.Console({ colorize: true, prettyPrint: true }),
     new transports.MongoDB({ db: "mongodb://localhost/vidly", level: "error" }),
   ],
 });
