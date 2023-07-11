@@ -3,7 +3,6 @@ const app = express();
 const config = require("config");
 const Joi = require("joi");
 Joi.objectId = require("joi-objectid")(Joi);
-require("express-async-errors");
 require("./startup/logging");
 require("./startup/routes")(app);
 require("./startup/db")();

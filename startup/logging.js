@@ -1,6 +1,7 @@
 const { createLogger, format, transports } = require("winston");
 const { combine, timestamp } = format;
 require("winston-mongodb");
+require("express-async-errors");
 
 module.exports = createLogger({
   format: combine(timestamp(), format.json()),
