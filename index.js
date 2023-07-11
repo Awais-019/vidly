@@ -3,19 +3,10 @@ const app = express();
 const config = require("config");
 const Joi = require("joi");
 Joi.objectId = require("joi-objectid")(Joi);
-const mongoose = require("mongoose");
 require("express-async-errors");
 require("./startup/logging");
 require("./startup/routes")(app);
-
-mongoose
-  .connect("mongodb://localhost/vidly")
-  .then(() => {
-    console.log("Connected to MongoDB...");
-  })
-  .catch((err) =>
-    console.error("Could not connect to MongoDB...", err.message)
-  );
+require("./startup/db")();
 
 if (!config.get("jwtPrivateKey")) {
   console.error("FATAL ERROR: jwtPrivateKey is not defined");
