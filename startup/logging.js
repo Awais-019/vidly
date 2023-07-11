@@ -4,7 +4,7 @@ require("winston-mongodb");
 require("express-async-errors");
 
 process.on("uncaughtException", (ex) => {
-  console.log("WE GOT AN UNCAUGHT EXCEPTION");
+  console.log("WE GOT AN UNCAUGHT EXCEPTION", ex);
   process.exit(1);
 });
 
