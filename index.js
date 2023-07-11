@@ -5,6 +5,7 @@ const Joi = require("joi");
 Joi.objectId = require("joi-objectid")(Joi);
 const mongoose = require("mongoose");
 require("express-async-errors");
+require("./startup/logging");
 
 mongoose
   .connect("mongodb://localhost/vidly")
