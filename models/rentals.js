@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Joi = require("../index");
+const Joi = require("../startup/validation");
 
 const rentalSchema = new mongoose.Schema({
   customer: {

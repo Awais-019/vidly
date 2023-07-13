@@ -1,4 +1,4 @@
-const Joi = require("../index");
+const Joi = require("../startup/validation");
 const mongoose = require("mongoose");
 const { genresSchema } = require("./genres");
 
