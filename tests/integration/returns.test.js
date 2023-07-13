@@ -71,4 +71,9 @@ describe("/api/returns", () => {
     const res = await excute();
     expect(res.status).toBe(400);
   });
+
+  it("should return 200 if we a valid request", async () => {
+    const res = await excute();
+    expect(res.status).toBe(200);
+  });
 });
